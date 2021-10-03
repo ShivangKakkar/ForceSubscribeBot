@@ -49,6 +49,6 @@ async def fsub(bot, msg: Message):
         if bot_chat_member.status == "administrator":
             to_be_chat_id = (await bot.get_chat(to_be_chat)).id
             await change_force_chat(chat_id, to_be_chat_id)
-            await msg.reply("Successful. Now I'll warn people who haven't joined that chat.")
+            await msg.reply("Successful. Now I'll mute people who haven't joined that chat. \n\nUse /settings to change settings.")
         else:
             await msg.reply("Please make me admin there and then try again !")
