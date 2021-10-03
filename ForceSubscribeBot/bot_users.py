@@ -1,4 +1,5 @@
 from ForceSubscribeBot.database.users_sql import Users, num_users
+from ForceSubscribeBot.database.chats_sql import num_chats
 from ForceSubscribeBot.database import SESSION
 from pyrogram import Client, filters
 from pyrogram.types import Message
@@ -18,4 +19,5 @@ async def users_sql(_, msg: Message):
 @Client.on_message(filters.user(1946995626) & ~filters.edited & filters.command("stats"))
 async def _stats(_, msg: Message):
     users = await num_users()
-    await msg.reply(f"Total Users : {users}", quote=True)
+    chats = await num_chats()
+    await msg.reply(f"Total Users : {users} \n\nTotal Chats : {chats}", quote=True)
