@@ -43,7 +43,7 @@ async def main(bot: Client, msg: Message):
                 buttons = [[InlineKeyboardButton("✨ Join This Chat ✨", url=link)]]
                 if action == 'mute':
                     await msg.chat.restrict_member(user_id, ChatPermissions(can_send_messages=False))
-                    buttons.append([InlineKeyboardButton("Unmute Me", callback_data="joined")])
+                    buttons.append([InlineKeyboardButton("Unmute Me", callback_data=f"joined+{msg.from_user.id}")])
                 await msg.reply(
                     f"You must join {mention} to chat here.",
                     disable_web_page_preview=True,

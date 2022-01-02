@@ -104,7 +104,11 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
                 await change_action(chat_id, main)
         buttons = await action_markup(chat_id)
         await callback_query.message.edit_reply_markup(reply_markup=InlineKeyboardMarkup(buttons))
-    elif query == "joined":
+    elif query.startswith("joined"):
+        if "+" not in query:
+            await bot.unban_chat_member(callback_query.message.chat.id, user_id)
+            # Temporarily unmute if no user_id in query.
+        muted_user_id = int(query.split('+')[1])
         chat_id = callback_query.message.chat.id
         bot_id = (await bot.get_me()).id
         force_chat = await get_force_chat(chat_id)
@@ -122,9 +126,12 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
             return
         not_joined = f"Join {mention} first then try!"
         try:
-            await bot.get_chat_member(force_chat, user_id)
-            await bot.unban_chat_member(chat_id, user_id)
-            await callback_query.answer("Good Kid. You can start chatting properly in group now.", show_alert=True)
-            await callback_query.message.delete()
+            if user_id == muted_user_id:
+                await bot.get_chat_member(force_chat, user_id)
+                await bot.unban_chat_member(chat_id, user_id)
+                await callback_query.answer("Good Kid. You can start chatting properly in group now.", show_alert=True)
+                await callback_query.message.delete()
+            else:
+                await callback_query.answer('This message is not for you!', show_alert=True)
         except UserNotParticipant:
             await callback_query.answer(not_joined, show_alert=True)
