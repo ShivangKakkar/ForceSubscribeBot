@@ -105,11 +105,11 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
         buttons = await action_markup(chat_id)
         await callback_query.message.edit_reply_markup(reply_markup=InlineKeyboardMarkup(buttons))
     elif query.startswith("joined"):
-        if "+" not in query:
-            await bot.unban_chat_member(callback_query.message.chat.id, user_id)
-            # Temporarily unmute if no user_id in query.
+        try:
+            muted_user_id = int(query.split('+')[1])
+        except IndexError:
+            # Temporarily catch
             return
-        muted_user_id = int(query.split('+')[1])
         chat_id = callback_query.message.chat.id
         bot_id = (await bot.get_me()).id
         force_chat = await get_force_chat(chat_id)
