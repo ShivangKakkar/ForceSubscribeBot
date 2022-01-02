@@ -108,6 +108,7 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
         if "+" not in query:
             await bot.unban_chat_member(callback_query.message.chat.id, user_id)
             # Temporarily unmute if no user_id in query.
+            return
         muted_user_id = int(query.split('+')[1])
         chat_id = callback_query.message.chat.id
         bot_id = (await bot.get_me()).id
