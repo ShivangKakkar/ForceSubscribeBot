@@ -13,7 +13,7 @@ The chat can be a group or channel. It can be private or public.
 
 Use below buttons to learn more !
 
-By @StarkBots
+By @AerodynamicV1_OFFICIAL
     """
 
     # Home Button
@@ -71,7 +71,7 @@ Framework : [Pyrogram](docs.pyrogram.org)
 
 Language : [Python](www.python.org)
 
-New Update✅ : https://t.me/AerodynamicV1_UPDATE
+New Update or More✅ : https://t.me/AerodynamicV1_UPDATE
 
 Developer : @AerodynamicV1_OFFICIAL
     """
