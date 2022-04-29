@@ -23,13 +23,14 @@ By @StarkBots
 
     # Rest Buttons
     buttons = [
-        [InlineKeyboardButton("✨ Bot Status and More Bots ✨", url="https://t.me/StarkBots/7")],
+        [InlineKeyboardButton("New Update or More ✅", url="https://t.me/AerodynamicV1_UPDATE")],
         [
             InlineKeyboardButton("How to Use ❔", callback_data="help"),
             InlineKeyboardButton("🎪 About 🎪", callback_data="about")
         ],
-        [InlineKeyboardButton("♥ More Amazing bots ♥", url="https://t.me/StarkBots")],
-        [InlineKeyboardButton("🎨 Support Group 🎨", url="https://t.me/StarkBotsChat")],
+        [InlineKeyboardButton("👁️‍🗨️Store💎", url="https://t.me/AerodynamicV1_Store_TG"),
+        InlineKeyboardButton("Support💬", url="https://t.me/AerodynamicV1_SUPPORT")],
+[InlineKeyboardButton("Free Promotion🚀", url="https://t.me/AerodynamicV1_Promotion")]
     ]
 
     # Help Message
@@ -62,13 +63,15 @@ Example : `/fsub -1001505616678` or `/forcesubscribe -1001375849192`
     ABOUT = """
 **About This Bot** 
 
-A telegram force subscribing bot by @StarkBots
+A telegram force subscribing bot by @AerodynamicV1_OFFICIAL
 
-Source Code : [Click Here](https://github.com/StarkBotsIndustries/ForceSubscribeBot)
+Source Code : [Click Here](https://github.com/AerodynamicV1Botz/ForceSubscribeBot)
 
 Framework : [Pyrogram](docs.pyrogram.org)
 
 Language : [Python](www.python.org)
 
-Developer : @StarkProgrammer
+New Update✅ : https://t.me/AerodynamicV1_UPDATE
+
+Developer : @AerodynamicV1_OFFICIAL
     """
