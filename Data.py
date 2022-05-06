@@ -13,7 +13,7 @@ The chat can be a group or channel. It can be private or public.
 
 Use below buttons to learn more !
 
-By @AerodynamicV1_OFFICIAL
+Made By @AerodynamicV1_OFFICIAL
     """
 
     # Home Button
